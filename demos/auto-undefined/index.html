@@ -1,0 +1,136 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium demo website tailored for your business, showcasing services and products designed for maximum impact and conversions.">
+    <title>Your Business Name - Premium Services</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        header {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: 50px 20px;
+            background: url('https://images.unsplash.com/photo-1601932699189-6bf9d6410941?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=60') no-repeat center center/cover;
+            color: white;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #e55b4f;
+        }
+        .expiration-banner {
+            background: #f44336;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+        .countdown {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Your Business Name</h1>
+        <p>Pioneering excellence in your industry with premium services tailored exclusively for you.</p>
+        <button class="cta-button">Activate This Website Now</button>
+    </div>
+</header>
+
+<div class="container">
+    <div class="expiration-banner">
+        This demo expires soon!
+    </div>
+    <div class="countdown" id="countdown">48:00</div>
+</div>
+
+<a href="https://wa.me/YourPhoneNumber" class="whatsapp-button" target="_blank">📞</a>
+
+<footer>
+    <p>Contact Us: Your Phone Number</p>
+    <p>© 2023 Your Business Name. All Rights Reserved.</p>
+</footer>
+
+<script>
+    var countdown = 48 * 60; // 48 minutes
+    var countdownElement = document.getElementById('countdown');
+    var interval = setInterval(function() {
+        var minutes = Math.floor(countdown / 60);
+        var seconds = countdown % 60;
+        countdownElement.innerHTML = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        countdown--;
+        if (countdown < 0) {
+            clearInterval(interval);
+            countdownElement.innerHTML = "Expired!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
+```
