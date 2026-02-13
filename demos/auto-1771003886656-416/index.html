@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiungani Trading Company Ltd - Your trusted partner in trade solutions. Specializing in quality products to help your business thrive.">
+    <meta name="keywords" content="Kiungani Trading Company, trade solutions, quality products, business partner">
+    <title>Kiungani Trading Company Ltd - Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            background-image: url('hero.png');
+            background-size: cover;
+            padding: 100px 20px;
+        }
+        .expire-banner {
+            background: #ff5722;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .cta-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cta-section h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        .cta-section p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        .button {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background-color: #e64a19;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+    <script>
+        function calculateTimeRemaining() {
+            const endTime = new Date(Date.now() + 48 * 60 * 60 * 1000);
+            const countdown = setInterval(() => {
+                const now = new Date();
+                const timeRemaining = endTime - now;
+                if (timeRemaining <= 0) {
+                    clearInterval(countdown);
+                    document.querySelector('.countdown').innerHTML = 'EXPIRED';
+                } else {
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                    document.querySelector('.countdown').innerHTML = `${hours}h ${minutes}m ${seconds}s`;
+                }
+            }, 1000);
+        }
+        window.onload = calculateTimeRemaining;
+    </script>
+</head>
+<body>
+    <header>
+        <div class="expire-banner">
+            This demo expires soon: <span class="countdown">48h 00m 00s</span>
+        </div>
+        <h1>Welcome to Kiungani Trading Company Ltd</h1>
+        <p>Your trusted partner in trade solutions.</p>
+    </header>
+    
+    <div class="container">
+        <div class="cta-section">
+            <h1>Unlock Premium Trading Solutions!</h1>
+            <p>At Kiungani Trading, we specialize in providing top-quality products to help your business thrive. Take advantage of our exclusive offerings designed just for you.</p>
+            <a href="#" class="button">Activate This Website Now</a>
+        </div>
+    </div>
+
+    <a href="https://wa.me/254714185333" class="whatsapp-button" title="Contact us on WhatsApp">💬</a>
+
+    <footer>
+        <p>&copy; 2023 Kiungani Trading Company Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
