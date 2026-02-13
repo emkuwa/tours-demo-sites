@@ -1,0 +1,92 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiungani Trading Company Ltd - Premium Trading Solutions</title>
+    <meta name="description" content="Discover high-quality trading solutions with Kiungani Trading Company Ltd. Act fast to secure your services.">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
+        header { position: relative; text-align: center; color: white; }
+        .hero { background: url('https://source.unsplash.com/1600x900/?business,trade') no-repeat center center; background-size: cover; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        h1 { font-size: 3em; margin: 0; }
+        p { font-size: 1.5em; }
+        .cta-button { padding: 16px 32px; background-color: #5cb85c; color: white; border: none; border-radius: 4px; font-size: 1.2em; cursor: pointer; transition: background 0.3s; }
+        .cta-button:hover { background-color: #4cae4c; }
+        .countdown { font-size: 1.5em; margin: 20px 0; }
+        .footer { text-align: center; padding: 20px 0; background-color: #333; color: white; }
+        .banner { background-color: #FF5733; color: white; padding: 10px; text-align: center; }
+        .whatsapp-button { position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; display: flex; justify-content: center; align-items: center; font-size: 2em; box-shadow: 0 3px 6px rgba(0,0,0,0.3); }
+        .whatsapp-button:hover { background-color: #1DAF63; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="banner">This demo expires soon!</div>
+        <div class="hero">
+            <h1>Welcome to Kiungani Trading Company Ltd</h1>
+            <p>Your partner in premium trading solutions</p>
+            <button class="cta-button" onclick="window.location.href='#contact'">Activate This Website Now</button>
+            <div class="countdown" id="countdown"></div>
+        </div>
+    </header>
+
+    <section id="services" style="text-align: center; padding: 50px 20px;">
+        <h2>Our Services</h2>
+        <p>Explore our array of top-notch trading solutions tailored for your business needs.</p>
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
+            <div style="flex: 1; min-width: 250px; margin: 10px; padding: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="https://source.unsplash.com/250x150/?finance" alt="Trading Solutions" style="width: 100%; border-radius: 8px;">
+                <h3>Trading Solutions</h3>
+                <p>Optimize your trading strategies for maximum profitability.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; margin: 10px; padding: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="https://source.unsplash.com/250x150/?market" alt="Market Insights" style="width: 100%; border-radius: 8px;">
+                <h3>Market Insights</h3>
+                <p>Gain insights that keep you ahead in the trading game.</p>
+            </div>
+            <div style="flex: 1; min-width: 250px; margin: 10px; padding: 20px; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <img src="https://source.unsplash.com/250x150/?investment" alt="Investment Strategies" style="width: 100%; border-radius: 8px;">
+                <h3>Investment Strategies</h3>
+                <p>Let us guide you through smart investment strategies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center; padding: 50px 20px;">
+        <h2>Contact Us</h2>
+        <p>Have any questions? Reach out to us!</p>
+        <button class="cta-button" onclick="window.location.href='tel:0714185333'">Call Us: 0714 185 333</button>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Kiungani Trading Company Ltd. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/0714185333" class="whatsapp-button">📱</a>
+
+    <script>
+        const countdownElement = document.getElementById('countdown');
+        let countdownDuration = 48 * 60 * 60; // 48 hours in seconds
+
+        const updateCountdown = () => {
+            const hours = Math.floor(countdownDuration / 3600);
+            const minutes = Math.floor((countdownDuration % 3600) / 60);
+            const seconds = countdownDuration % 60;
+            countdownElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
+            countdownDuration--;
+
+            if (countdownDuration < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = "Demo Expired!";
+                document.querySelector('.cta-button').disabled = true;
+            }
+        };
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+```
