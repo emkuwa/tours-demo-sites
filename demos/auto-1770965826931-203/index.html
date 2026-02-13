@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kiungani Trading Company Ltd - Premium Trading Solutions">
+    <meta name="keywords" content="Kiungani Trading, Trading, Solutions, Premium, Urgent">
+    <title>Kiungani Trading Company Ltd - Limited Time Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background: url('https://source.unsplash.com/random/1920x1080/?trading') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        p {
+            font-size: 1.25rem;
+            margin: 20px 0;
+        }
+        .cta-button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.25rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #218838;
+        }
+        .countdown {
+            font-size: 2rem;
+            color: #ff4757;
+        }
+        .banner {
+            background-color: #ff4757;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .contact-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: background-color 0.3s;
+        }
+        .contact-button:hover {
+            background-color: #1DAF5B;
+        }
+        .expiration {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ffcc00;
+            padding: 5px 10px;
+            font-weight: bold;
+        }
+        .container {
+            padding: 50px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        let countdownDate = new Date().getTime() + 48 * 60 * 60 * 1000; // 48 hours
+        function updateCountdown() {
+            let now = new Date().getTime();
+            let distance = countdownDate - now;
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "EXPIRED";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <header>
+        <div class="banner">
+            This demo expires soon!
+            <span class="expiration">48H</span>
+        </div>
+        <h1>Kiungani Trading Company Ltd</h1>
+        <p>Your Premium Trading Solutions Partner</p>
+        <p class="countdown" id="timer"></p>
+        <a href="#" class="cta-button">Activate This Website Now!</a>
+    </header>
+    <div class="container">
+        <h2>Why Choose Kiungani Trading?</h2>
+        <p>We provide top-notch trading solutions tailored for your unique business needs. Join the ranks of successful traders today.</p>
+        <a href="tel:0714185333" class="cta-button">Call Now: 0714 185 333</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Kiungani Trading Company Ltd. All rights reserved.</p>
+    </footer>
+    <a href="https://wa.me/0714185333" class="contact-button" target="_blank">📞</a>
+</body>
+</html>
