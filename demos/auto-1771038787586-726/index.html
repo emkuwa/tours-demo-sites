@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Beta Hardware Supplies - Your one-stop shop for all hardware needs.">
+    <title>Beta Hardware Supplies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background: url('hero.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 1s;
+        }
+        .intro {
+            margin: 20px 0;
+            font-size: 1.5rem;
+            animation: fadeIn 2s;
+        }
+        .countdown {
+            background-color: red;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+        }
+        .countdown h2 {
+            margin: 0;
+        }
+        .services {
+            padding: 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+        .service {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .service:hover {
+            transform: scale(1.05);
+        }
+        .cta {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #218838;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Beta Hardware Supplies</h1>
+    <div class="intro">Your one-stop shop for all your hardware needs</div>
+</header>
+
+<div class="countdown">
+    <h2>This demo expires soon! Time left:</h2>
+    <div id="timer"></div>
+</div>
+
+<div class="services">
+    <div class="service">
+        <h3>Quality Tools</h3>
+        <p>Discover a wide range of high-quality tools for all your projects.</p>
+    </div>
+    <div class="service">
+        <h3>Materials & Supplies</h3>
+        <p>Find the best materials and supplies at unbeatable prices.</p>
+    </div>
+    <div class="service">
+        <h3>Expert Assistance</h3>
+        <p>Our experienced staff is always here to help you with your needs.</p>
+    </div>
+</div>
+
+<div class="cta">
+    <button class="btn">Activate This Website Now</button>
+</div>
+
+<footer class="footer">
+    <p>Contact us: 0755 222 111</p>
+</footer>
+
+<button class="whatsapp-btn" onclick="window.open('https://wa.me/0755222111')">📞</button>
+
+<script>
+    function startCountdown(duration) {
+        var timer = duration, hours, minutes, seconds;
+        var display = document.getElementById('timer');
+        setInterval(function () {
+            hours = parseInt(timer / 3600, 10);
+            minutes = parseInt((timer % 3600) / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = hours + " : " + minutes + " : " + seconds;
+
+            if (--timer < 0) {
+                timer = 0;
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        startCountdown(172800); // 48 hours in seconds
+    };
+</script>
+</body>
+</html>
