@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the best of Zanzibar with Zanzibar Experience. Book your adventure today!">
+    <meta name="keywords" content="Zanzibar, travel, adventure, tours, experiences, holiday">
+    <title>Zanzibar Experience - Limited Time Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #banner {
+            background: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        #countdown {
+            color: red;
+            font-weight: bold;
+        }
+        header {
+            background: url('hero.png') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .cta-button {
+            background: #ff6347;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: #e5533d;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .services {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .service {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            border-radius: 50%;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <script>
+        function startCountdown(duration) {
+            let timer = duration, hours, minutes, seconds;
+            setInterval(() => {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                document.getElementById('countdown').innerHTML = `${("0" + hours).slice(-2)}:${("0" + minutes).slice(-2)}:${("0" + seconds).slice(-2)}`;
+                if (--timer < 0) {
+                    timer = 0;
+                }
+            }, 1000);
+        }
+        window.onload = function () {
+            let countdownDuration = 48 * 60 * 60; // 48 hours in seconds
+            startCountdown(countdownDuration);
+        };
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <span>This demo expires soon! Time left: <span id="countdown">48:00:00</span></span>
+    </div>
+    <header>
+        <h1>Explore the Magic of Zanzibar</h1>
+        <a href="#services" class="cta-button">Discover Our Services</a>
+    </header>
+    <section id="services">
+        <h2>Our Exclusive Experiences</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Stunning Beaches</h3>
+                <p>Relax on the beautiful sands of Zanzibar.</p>
+            </div>
+            <div class="service">
+                <h3>Cultural Tours</h3>
+                <p>Immerse yourself in rich local culture.</p>
+            </div>
+            <div class="service">
+                <h3>Adventure Activities</h3>
+                <p>Experience thrilling adventures in paradise.</p>
+            </div>
+        </div>
+        <a href="#activate" class="cta-button">Activate This Website Now</a>
+    </section>
+    <footer>
+        <p>Contact us: <a href="tel:+0654539774">0654 539 774</a></p>
+        <p>© 2023 Zanzibar Experience. All rights reserved.</p>
+    </footer>
+    <a href="https://wa.me/0654539774" class="whatsapp-button">
+        <img src="https://img.icons8.com/fluency/48/ffffff/whatsapp.png" alt="WhatsApp" width="32" height="32"/>
+    </a>
+</body>
+</html>
